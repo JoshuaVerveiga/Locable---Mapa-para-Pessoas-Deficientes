@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Locable</title>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO COM BARRA DE PESQUISA -->
+    <header>
+        <div class="header-container">
+            <img src="https://i.imgur.com/bKIgWMm.png" alt="Locable Logo" class="logo">
+            <input type="text" placeholder="Digite a cidade ou local de interesse..." id="search-bar" class="search-bar">
+            <button id="botaoPesquisar" class="search-button" onclick="pesquisar()">Pesquisar</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Resultados da pesquisa aparecerão aqui -->
+        <div class="content">
+            <!-- Coluna de Filtros -->
+            <div class="filter-container">
+                <h3>Filtrar por:</h3>
+                <!-- Filtro de Cidade -->
+                <div class="filter-group">
+                    <label for="filtro-cidade">Cidade:</label>
+                    <select id="filtro-cidade" onchange="filtrar()">
+                        <option value="">Todas as Cidades</option>
+                        <option value="1">São Paulo</option>
+                        <option value="2">Rio de Janeiro</option>
+                        <option value="3">Curitiba</option>
+                    </select>
+                </div>
+
+                <!-- Filtro de Tipo de Lugar -->
+                <div class="filter-group">
+                    <label for="filtro-tipo">Tipo de Lugar:</label>
+                    <select id="filtro-tipo" onchange="filtrar()">
+                        <option value="">Todos os Tipos</option>
+                        <option value="Praças Públicas">Praças Públicas</option>
+                        <option value="Bairros">Bairros</option>
+                        <option value="Transporte">Transporte</option>
+                        <option value="Restaurantes">Restaurantes</option>
+                        <option value="Hotéis">Hotéis</option>
+                    </select>
+                </div>
+
+                <!-- Filtro de Acessibilidade -->
+                <div class="filter-group">
+                    <label for="filtro-acessibilidade">Acessibilidade:</label>
+                    <select id="filtro-acessibilidade" onchange="filtrar()">
+                        <option value="">Todas</option>
+                        <option value="Rampa">Rampa</option>
+                        <option value="Piso Tátil">Piso Tátil</option>
+                        <option value="Banheiro Adaptado">Banheiro Adaptado</option>
+                        <option value="Braile">Braile</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Resultados da Pesquisa -->
+            <div id="resultados-pesquisa" class="resultados-pesquisa">
+                <!-- As cidades aparecerão aqui antes da pesquisa -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>2024 - Locable. Todos os direitos reservados</p>
+        <p>Entre em contato pelo email: locable@suporte.com.br</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="dados.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
